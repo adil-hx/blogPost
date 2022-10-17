@@ -4,8 +4,8 @@ from os import path
 from flask_login import LoginManager
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'd79526b4a69da40429cf53318ada056873e0d684cfe8486c'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://c21117653:Trucker123@csmysql.cs.cf.ac.uk:3306/c21117653_flask_lab_db'
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("Database_URI)
 
 db = SQLAlchemy()
 db.init_app(app)
